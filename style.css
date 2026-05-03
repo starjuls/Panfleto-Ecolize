@@ -1,9 +1,9 @@
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
     background-color: #013a63;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 .atmosphere {
@@ -18,11 +18,14 @@ body {
 .bubble {
     position: fixed;
     z-index: 1;
-    pointer-events: none; 
+    pointer-events: none;
+    opacity: 0.6;
+    /* Melhora a nitidez do SVG */
+    image-rendering: -webkit-optimize-contrast;
 }
 
-.bubble-1 { width: 400px; top: 10%; left: -100px; }
-.bubble-2 { width: 300px; bottom: 15%; right: -50px; }
+.bubble-1 { width: 350px; top: 15%; left: -100px; }
+.bubble-2 { width: 250px; bottom: 10%; right: -60px; }
 
 .main-container {
     position: relative;
@@ -34,6 +37,8 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .full-page-svg {
@@ -41,12 +46,15 @@ body {
     width: 100%;
     max-width: 540px;
     height: auto;
+    /* Força a melhor qualidade de renderização do navegador */
+    image-rendering: -webkit-optimize-contrast;
+    shape-rendering: geometricPrecision;
 }
 
 .reveal {
     opacity: 0;
     transform: translateY(20px);
-    transition: all 1s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .reveal.active {
