@@ -4,7 +4,7 @@ function scrollReveal() {
     reveals.forEach((element) => {
         const windowHeight = window.innerHeight;
         const elementTop = element.getBoundingClientRect().top;
-        const visiblePoint = 150;
+        const visiblePoint = 100;
 
         if (elementTop < windowHeight - visiblePoint) {
             element.classList.add("active");
@@ -12,5 +12,6 @@ function scrollReveal() {
     });
 }
 
+// Ativa ao rolar e ao carregar a página
 window.addEventListener("scroll", scrollReveal);
 window.addEventListener("load", scrollReveal);

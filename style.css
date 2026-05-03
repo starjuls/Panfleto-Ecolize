@@ -4,6 +4,15 @@ body {
     background-color: #013a63;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Forçar nitidez em todos os SVGs */
+img[src$=".svg"] {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    shape-rendering: geometricPrecision;
+    transform: translateZ(0);
 }
 
 .atmosphere {
@@ -20,8 +29,6 @@ body {
     z-index: 1;
     pointer-events: none;
     opacity: 0.6;
-    /* Melhora a nitidez do SVG */
-    image-rendering: -webkit-optimize-contrast;
 }
 
 .bubble-1 { width: 350px; top: 15%; left: -100px; }
@@ -37,23 +44,20 @@ body {
     display: flex;
     justify-content: center;
     width: 100%;
-    margin: 0;
-    padding: 0;
+    padding: 20px 0;
 }
 
 .full-page-svg {
     display: block;
-    width: 100%;
+    width: 90%; /* Ajuste para não colar nas bordas do celular */
     max-width: 540px;
     height: auto;
-    /* Força a melhor qualidade de renderização do navegador */
-    image-rendering: -webkit-optimize-contrast;
-    shape-rendering: geometricPrecision;
 }
 
+/* Animação de subida */
 .reveal {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     transition: all 0.8s ease-out;
 }
 
