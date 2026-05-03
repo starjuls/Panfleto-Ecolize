@@ -6,8 +6,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-/* Forçar nitidez em todos os SVGs */
 img[src$=".svg"] {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -49,12 +47,11 @@ img[src$=".svg"] {
 
 .full-page-svg {
     display: block;
-    width: 90%; /* Ajuste para não colar nas bordas do celular */
+    width: 90%; 
     max-width: 540px;
     height: auto;
 }
 
-/* Animação de subida */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
